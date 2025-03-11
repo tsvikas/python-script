@@ -18,10 +18,10 @@ repos:
       - id: check-added-large-files
       - id: check-merge-conflict
       - id: check-vcs-permalinks
-      - id: forbid-submodules
+      - id: forbid-submodules  # use subtree
       # Security
       - id: detect-private-key
-      # Text formatting
+      # Text encoding/formatting
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: mixed-line-ending
@@ -48,12 +48,14 @@ repos:
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
     hooks:
+      # Python files
       - id: python-check-blanket-noqa
       - id: python-check-blanket-type-ignore
       - id: python-check-mock-methods
       - id: python-no-eval
       - id: python-no-log-warn
       - id: python-use-type-annotations
+      # UTF-8 encoding
       - id: text-unicode-replacement-char
 
   # Spell checking
@@ -92,7 +94,7 @@ repos:
   # Jupyter notebook files
   - repo: local
     hooks:
-      - id: forbid-ipynb
+      - id: forbid-ipynb  # use jupytext
         name: forbid ipynb
         entry: filenames must not end in .ipynb
         language: fail
