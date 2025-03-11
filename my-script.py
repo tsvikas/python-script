@@ -3,6 +3,7 @@
 # requires-python = ">=3.13"
 # dependencies = []
 # ///
+# NOTE: use `#!/usr/bin/env -S uv run --script` if there are dependencies
 
 
 def main() -> None:
